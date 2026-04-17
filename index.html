@@ -1,58 +1,274 @@
- <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy — Tomorrow's Another Day</title>
-    <style>
-      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 60px auto; padding: 0 24px 80px; color: #1a1a2e; line-height: 1.7; }
-      h1 { font-size: 28px; font-weight: 800; color: #4a2d82; margin-bottom: 4px; }
-      h2 { font-size: 16px; font-weight: 700; color: #4a2d82; margin-top: 36px; margin-bottom: 8px; }
-      .meta { font-size: 13px; color: #888; margin-bottom: 40px; }
-      p { margin-bottom: 16px; font-size: 15px; color: #333; }
-      .highlight { background: #f4f2fa; border-left: 3px solid #7b5fb5; padding: 14px 18px; border-radius: 4px; margin: 24px 0; font-size: 15px; color: #4a2d82; font-weight: 500; }
-      footer { margin-top: 60px; font-size: 12px; color: #aaa; border-top: 1px solid #ece8f7; padding-top: 24px; }
-    </style>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Tomorrow's Another Day</title>
+  <style>
+    :root {
+      --bg:           #16111F;
+      --bg-surface:   #1f1730;
+      --border:       rgba(155,127,212,0.15);
+      --primary:      #9b7fd4;
+      --primary-dim:  rgba(155,127,212,0.12);
+      --primary-light:#c4a8f0;
+      --text-primary: #f0ecfa;
+      --text-secondary:#b8aed4;
+      --text-muted:   #7a7090;
 
+      --intense:   #c94040;
+      --elevated:  #c4822a;
+      --steady:    #7b5fb5;
+      --low:       #3a78c4;
+      --struggling:#4a4aa0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 24px 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    .symbol {
+      margin-bottom: 28px;
+      opacity: 0.95;
+    }
+
+    .app-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      max-width: 600px;
+      margin: 0 auto 48px;
+      padding: 20px 24px;
+      background: var(--primary-dim);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--primary-light);
+      line-height: 1.5;
+    }
+
+    /* ── Content ── */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+      line-height: 1.75;
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Disclaimer card ── */
+    .disclaimer {
+      border-color: rgba(155,127,212,0.25);
+      background: rgba(155,127,212,0.06);
+    }
+
+    .disclaimer h2 {
+      color: var(--primary-light);
+    }
+
+    .disclaimer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 24px 32px;
+    }
+
+    footer strong {
+      color: var(--text-secondary);
+    }
+
+    /* ── Zone ribbon ── */
+    .ribbon {
+      display: flex;
+      height: 5px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    .ribbon span {
+      flex: 1;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Duality symbol -->
+    <svg class="symbol" width="90" height="90" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" fill="rgba(155,127,212,0.04)"/>
+      <circle cx="100" cy="100" r="78" fill="rgba(155,127,212,0.05)"/>
+      <circle cx="100" cy="100" r="60" fill="rgba(155,127,212,0.06)"/>
+      <path d="M 15,100 Q 57,12 100,100" stroke="#c4822a" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.95"/>
+      <path d="M 100,100 Q 143,188 185,100" stroke="#3a78c4" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.95"/>
+      <circle cx="15"  cy="100" r="5"  fill="#4a4aa0" opacity="0.75"/>
+      <circle cx="15"  cy="100" r="9"  fill="rgba(74,74,160,0.2)"/>
+      <circle cx="185" cy="100" r="5"  fill="#c94040" opacity="0.75"/>
+      <circle cx="185" cy="100" r="9"  fill="rgba(201,64,64,0.2)"/>
+      <circle cx="100" cy="100" r="22" fill="rgba(155,127,212,0.18)" opacity="0.5"/>
+      <circle cx="100" cy="100" r="15" fill="rgba(155,127,212,0.18)"/>
+      <circle cx="100" cy="100" r="10" fill="#9b7fd4"/>
+      <circle cx="100" cy="100" r="5"  fill="#c4a8f0"/>
+      <circle cx="100" cy="100" r="2"  fill="#fff" opacity="0.6"/>
+      <circle cx="57"  cy="38"  r="2.5" fill="#c4822a" opacity="0.6"/>
+      <circle cx="143" cy="162" r="2.5" fill="#3a78c4" opacity="0.6"/>
+      <circle cx="35"  cy="130" r="1.5" fill="rgba(155,127,212,0.5)" opacity="0.45"/>
+      <circle cx="165" cy="70"  r="1.5" fill="rgba(155,127,212,0.5)" opacity="0.45"/>
+    </svg>
+
+    <p class="app-name">Tomorrow's Another Day</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Tomorrow's Another Day &nbsp;·&nbsp; Last updated: April 2026</p>
+    <p class="meta">Last updated: April 2026</p>
+  </header>
+
+  <main>
 
     <div class="highlight">
-      The short version: this app collects nothing. Your data never leaves your device.
+      The short version: this app collects nothing.<br>Your data never leaves your device.
     </div>
 
-    <h2>What we collect</h2>
-    <p>Nothing. Tomorrow's Another Day does not collect, transmit, or store any personal information on any server. There are no accounts, no sign-ups, and no remote databases.</p>
+    <div class="card">
+      <h2>What we collect</h2>
+      <p>Nothing. Tomorrow's Another Day does not collect, transmit, or store any personal information on any server. There are no accounts, no sign-ups, and no remote databases.</p>
+    </div>
 
-    <h2>Where your data lives</h2>
-    <p>All mood check-ins, journal entries, contacts, and settings are stored exclusively in your device's local storage (AsyncStorage). This data is private to your device and is not
-  accessible to us or any third party.</p>
+    <div class="card">
+      <h2>Where your data lives</h2>
+      <p>All mood check-ins, journal entries, contacts, and settings are stored exclusively in your device's local storage. This data is private to your device and is not accessible to us or any third party.</p>
+    </div>
 
-    <h2>Third parties</h2>
-    <p>We do not use any analytics services, advertising networks, or third-party SDKs that transmit data. The app works entirely offline.</p>
+    <div class="card">
+      <h2>Third parties</h2>
+      <p>We do not use any analytics services, advertising networks, or third-party SDKs that transmit data. The app works entirely offline.</p>
+    </div>
 
-    <h2>Notifications</h2>
-    <p>If you enable daily reminders, the notification is scheduled locally on your device using iOS's built-in notification system. No message content is sent to any external server.</p>
+    <div class="card">
+      <h2>Notifications</h2>
+      <p>If you enable daily reminders, notifications are scheduled locally on your device using iOS's built-in notification system. No message content is sent to any external server.</p>
+    </div>
 
-    <h2>Biometrics</h2>
-    <p>If you enable Face ID or Touch ID to lock the app, biometric data is handled entirely by your device's secure enclave. We never see or store it.</p>
+    <div class="card">
+      <h2>Biometrics</h2>
+      <p>If you enable Face ID or Touch ID to lock the app, biometric data is handled entirely by your device's secure enclave. We never see or store it.</p>
+    </div>
 
-    <h2>Children's privacy</h2>
-    <p>This app is not directed at children under 13. We do not knowingly collect information from children.</p>
+    <div class="card">
+      <h2>Children's privacy</h2>
+      <p>This app is not directed at children under 13. We do not knowingly collect information from children.</p>
+    </div>
 
-    <h2>Medical disclaimer</h2>
-    <p>Tomorrow's Another Day is a personal mood tracking tool. It is not a medical device and is not a substitute for professional mental health care. If you are in crisis, please
-  contact emergency services or a crisis helpline.</p>
+    <div class="card">
+      <h2>Changes to this policy</h2>
+      <p>If this policy changes, the updated version will be posted here with a new date. Because we collect no data, any changes are unlikely to affect you.</p>
+    </div>
 
-    <h2>Changes to this policy</h2>
-    <p>If this policy changes, the updated version will be posted here with a new date. Because we collect no data, any changes are unlikely to affect you.</p>
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Questions? Reach us at <a href="mailto:hello@darkslab.app">hello@darkslab.app</a></p>
+    </div>
 
-    <h2>Contact</h2>
-    <p>Questions? Reach us at <a href="mailto:hello@darkslab.app" style="color:#7b5fb5;">hello@darkslab.app</a> — or whatever email you'd like to list here.</p>
+    <div class="card disclaimer">
+      <h2>Medical disclaimer</h2>
+      <p>Tomorrow's Another Day is a personal mood tracking tool. It is not a medical device and is not a substitute for professional mental health care. If you are in crisis, please contact emergency services or a crisis helpline.</p>
+    </div>
 
-    <footer>Tomorrow's Another Day · Made by Dark's Lab · All data stays on your device, always.</footer>
+  </main>
 
-  </body>
-  </html>
+  <footer>
+    <strong>Tomorrow's Another Day</strong> · Made by Dark's Lab<br>
+    All data stays on your device, always.
+  </footer>
+
+  <!-- Zone colour ribbon, fixed to bottom -->
+  <div class="ribbon">
+    <span style="background:#4a4aa0;"></span>
+    <span style="background:#3a78c4;"></span>
+    <span style="background:#7b5fb5;"></span>
+    <span style="background:#c4822a;"></span>
+    <span style="background:#c94040;"></span>
+  </div>
+
+</body>
+</html>
